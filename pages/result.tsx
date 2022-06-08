@@ -2,9 +2,12 @@ import type { NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-import { Button, Text, Card, MediaQuery } from '@mantine/core'
+import { Button, Text, Card, MediaQuery, Center, useMantineTheme } from '@mantine/core'
+import Image from 'next/image'
 
 const Home: NextPage = () => {
+
+    const theme = useMantineTheme()
 
     const router = useRouter()
     let { score: scoreQuery } = router.query
@@ -16,13 +19,14 @@ const Home: NextPage = () => {
                 flexGrow: 1,
                 backgroundColor: "rgba(255,255,255,0.7)",
                 display: "flex",
-                flexDirection: "column"
+                flexDirection: "column",
+                overflowY: 'auto'
             }}
                 shadow={"md"}
                 radius="md">
 
                 {/* ICON */}
-                <Card.Section p="lg" style={{ fontSize: 128, minHeight: 125, textAlign: "center" }}>{score > 0 ? "💚" : "😈"}</Card.Section>
+                <Card.Section p="lg" style={{ fontSize: 80, textAlign: "center" }}>{score > 0 ? "💚" : "😈"}</Card.Section>
 
                 {score >= 0 ?
                     <Card.Section p="lg" style={{ textAlign: 'center' }}>
@@ -48,11 +52,30 @@ const Home: NextPage = () => {
                     </Card.Section>
                 }
 
-                <div style={{ flexGrow: 1 }}></div>
+                {/* QR CODE */}
+                <Card.Section p="lg" style={{ flexGrow: 1 }}>
+                    <Center style={{ height: "100%", textAlign: 'center' }}>
+                        <div style={{
+                            display: 'flex',
+                            gap: 8,
+                            flexDirection: "column"
+                        }}>
+                            <Image src="/qr_code.png" alt="link to factsheet" height={160} width={160} layout="fixed" />
+
+                            <Link href={"https://startpage.com"}>
+                                <Button variant='gradient'
+                                    style={{ borderRadius: 6, backgroundColor: theme.white }}
+                                    px={12} py={6}>
+                                    Scan for Factsheet
+                                </Button>
+                            </Link>
+                        </div>
+                    </Center>
+                </Card.Section>
 
                 {/* GO AGAIN BUTTON */}
                 <Link href={`/question/0?score=0`}>
-                    <Button variant='filled'>Go again</Button>
+                    <Button style={{ minHeight: 36 }} variant='gradient'>Go again</Button>
                 </Link>
 
 

@@ -11,7 +11,8 @@ const Home: NextPage = () => {
         flexGrow: 1,
         backgroundColor: "rgba(255,255,255,0.7)",
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        overflowY: 'auto'
       }}
         shadow={"md"}
         radius="md">
@@ -27,7 +28,7 @@ const Home: NextPage = () => {
 
         {/* START BUTTON */}
         <Link href={`/question/0?score=0`}>
-          <Button variant='filled'>Start</Button>
+          <Button variant='gradient'>Start</Button>
         </Link>
 
       </Card>

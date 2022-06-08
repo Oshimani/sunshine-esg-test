@@ -45,7 +45,8 @@ const QuestionPage: NextPage<IQuestionPageProps> = (props: IQuestionPageProps) =
                 flexGrow: 1,
                 backgroundColor: "rgba(255,255,255,0.7)",
                 display: "flex",
-                flexDirection: "column"
+                flexDirection: "column",
+                overflowY: 'auto'
             }}
                 shadow={"md"}
                 radius="md">
@@ -56,7 +57,7 @@ const QuestionPage: NextPage<IQuestionPageProps> = (props: IQuestionPageProps) =
                 {/* QUESTION */}
                 <Card.Section p="lg" style={{ textAlign: "center" }}>
                     <Text size="xl">
-                        {question?.question}
+                        <b>These {Number(id) + 1}/{QUESTIONS.length}:</b> {question?.question}
                     </Text>
                 </Card.Section>
 
