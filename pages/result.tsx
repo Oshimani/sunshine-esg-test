@@ -60,8 +60,9 @@ const Home: NextPage = () => {
                             gap: 8,
                             flexDirection: "column"
                         }}>
-                            <Image src="/qr_code.png" alt="link to factsheet" height={160} width={160} layout="fixed" />
-
+                            <Link href={"https://startpage.com"}>
+                                <Image src="/qr_code.png" alt="link to factsheet" height={160} width={160} layout="fixed" />
+                            </Link>
                             <Link href={"https://startpage.com"}>
                                 <Button variant='gradient'
                                     style={{ borderRadius: 6, backgroundColor: theme.white }}
