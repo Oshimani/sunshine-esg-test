@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 import { Button, Text, Card, MediaQuery, Center, useMantineTheme } from '@mantine/core'
-import Image from 'next/image'
 
 const Home: NextPage = () => {
 
@@ -26,9 +26,18 @@ const Home: NextPage = () => {
                 radius="md">
 
                 {/* ICON */}
-                <Card.Section p="lg" style={{ fontSize: 80, textAlign: "center" }}>{score > 0 ? "💚" : "😈"}</Card.Section>
+                <Card.Section p="lg">
+                    <Center>
+                        {score > 0 ?
+                            <Image src={`/Happy.png`} alt="Abbildung einer glücklichen Biene." width={180} height={180} />
+                            :
+                            <Image src={`/Sad.png`} alt="Abbildung einer traurigen Biene." width={180} height={180} />
 
-                {score >= 0 ?
+                        }
+                    </Center>
+                </Card.Section>
+
+                {score > 0 ?
                     <Card.Section p="lg" style={{ textAlign: 'center' }}>
                         <Text size='lg' mb="lg">
                             Du hast ein grünes Herz.<br />
@@ -43,11 +52,10 @@ const Home: NextPage = () => {
 
                     <Card.Section p="lg" style={{ textAlign: 'center' }}>
                         <Text size='lg' mb="lg">
-                            Keine besonders ökologische Einstellung.<br />
-                            Warum nicht zum Ausgleich nachhaltig investieren?
+                            Du könntest etwas Nachhilfe zum Thema Nachhaltigkeit gebrauchen.
                         </Text>
                         <Text>
-                            Informiere dich über den <span style={{ fontWeight: 'bold' }}>Sunshine ESG Fund EUR</span> und erleichtere dein Gewissen durch ein besonders nachhaltiges Investment.
+                            Informiere dich über den <span style={{ fontWeight: 'bold' }}>Sunshine ESG Fund EUR</span> und starte mit einem Investment in Unternehmen, die auf dem Gebiet der Nachhaltigkeit Branchenleader sind.
                         </Text>
                     </Card.Section>
                 }
@@ -67,7 +75,7 @@ const Home: NextPage = () => {
                                 <Button variant='gradient'
                                     style={{ borderRadius: 6, backgroundColor: theme.white }}
                                     px={12} py={6}>
-                                    Scan for Factsheet
+                                    Factsheet
                                 </Button>
                             </Link>
                         </div>
@@ -76,7 +84,7 @@ const Home: NextPage = () => {
 
                 {/* GO AGAIN BUTTON */}
                 <Link href={`/question/0?score=0`}>
-                    <Button style={{ minHeight: 36 }} variant='gradient'>Go again</Button>
+                    <Button style={{ minHeight: 36 }} variant='gradient'>Nochmal versuchen</Button>
                 </Link>
 
 
