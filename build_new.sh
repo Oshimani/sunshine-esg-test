@@ -1,2 +1,3 @@
 git pull
-sudo docker-compose restart --force-recreate
+sudo docker-compose down
+sudo docker-compose up -d --force-recreate
