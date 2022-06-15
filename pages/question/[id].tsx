@@ -39,18 +39,18 @@ const QuestionPage: NextPage<IQuestionPageProps> = (props: IQuestionPageProps) =
         if (question?.answers) {
             // handle mc question
             goToAnswer(scoreDiff)
-            return
-        }
-        // handle yes no question
-        if (QUESTIONS.length > Number(id) + 1) {
-            // go to next question
-            goToNextQuestion(scoreDiff)
-        } else {
-            // go to results
-            router.push(`/result?score=${score}`)
-        }
-        return
 
+        } else {
+            // handle yes no question
+
+            if (QUESTIONS.length > Number(id) + 1) {
+                // go to next question
+                goToNextQuestion(scoreDiff)
+            } else {
+                // go to results
+                router.push(`/result?score=${score}`)
+            }
+        }
     }
 
     return (
