@@ -39,6 +39,7 @@ const QuestionPage: NextPage<IQuestionPageProps> = (props: IQuestionPageProps) =
         if (question?.answers) {
             // handle mc question
             goToAnswer(scoreDiff)
+            return
         }
         // handle yes no question
         if (QUESTIONS.length > Number(id) + 1) {
