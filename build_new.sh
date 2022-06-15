@@ -1,3 +1,2 @@
 git pull
-sudo docker build -t sunshine-esg-quiz .
-sudo docker restart sunshine-esg-quiz
+sudo docker-compose restart --force-recreate

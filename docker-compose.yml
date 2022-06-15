@@ -5,5 +5,5 @@ services:
     container_name: sunshine-esg-server
     build: ./
     ports:
-      - "20090:80"
+      - "20090:3000"
     restart: unless-stopped
