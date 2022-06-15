@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 
-import { Button, Text, Card, MediaQuery, Center, useMantineTheme } from '@mantine/core'
+import { Button, Text, Card, MediaQuery, Center, useMantineTheme, SimpleGrid } from '@mantine/core'
 
 const Home: NextPage = () => {
 
@@ -61,25 +61,50 @@ const Home: NextPage = () => {
                 }
 
                 {/* QR CODE */}
+
                 <Card.Section p="lg" style={{ flexGrow: 1 }}>
-                    <Center style={{ height: "100%", textAlign: 'center' }}>
-                        <div style={{
-                            display: 'flex',
-                            gap: 8,
-                            flexDirection: "column"
-                        }}>
-                            <Link href={"https://startpage.com"}>
-                                <Image src="/qr_code.png" alt="link to factsheet" height={160} width={160} layout="fixed" />
-                            </Link>
-                            <Link href={"https://startpage.com"}>
-                                <Button variant='gradient'
-                                    style={{ borderRadius: 6, backgroundColor: theme.white }}
-                                    px={12} py={6}>
-                                    Factsheet
-                                </Button>
-                            </Link>
-                        </div>
-                    </Center>
+                    <SimpleGrid cols={2} breakpoints={[{ maxWidth: theme.breakpoints.xs, cols: 1 }]}>
+
+                        <Center style={{ height: "100%", textAlign: 'center' }}>
+                            <div style={{
+                                display: 'flex',
+                                gap: 8,
+                                flexDirection: "column"
+                            }}>
+                                <Link href={"https://startpage.com"}>
+                                    <Image src="/qr_code_factsheet.png" alt="link to factsheet" height={160} width={160} layout="fixed" />
+                                </Link>
+                                <Link href={"https://startpage.com"}>
+                                    <Button variant='gradient'
+                                        style={{ borderRadius: 6, backgroundColor: theme.white }}
+                                        px={12} py={6}>
+                                        Factsheet
+                                    </Button>
+                                </Link>
+                            </div>
+                        </Center>
+
+                        {/* QR CODE */}
+                        <Center style={{ height: "100%", textAlign: 'center' }}>
+                            <div style={{
+                                display: 'flex',
+                                gap: 8,
+                                flexDirection: "column"
+                            }}>
+                                <Link href={"https://startpage.com"}>
+                                    <Image src="/qr_code_kiid.png" alt="link to factsheet" height={160} width={160} layout="fixed" />
+                                </Link>
+                                <Link href={"https://startpage.com"}>
+                                    <Button variant='gradient'
+                                        style={{ borderRadius: 6, backgroundColor: theme.white }}
+                                        px={12} py={6}>
+                                        KIID
+                                    </Button>
+                                </Link>
+                            </div>
+                        </Center>
+                    </SimpleGrid>
+
                 </Card.Section>
 
                 {/* GO AGAIN BUTTON */}
