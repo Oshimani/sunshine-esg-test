@@ -3,7 +3,7 @@ version: '3'
 services:
   sunshineserver:
     container_name: sunshine-esg-server
-    image: sunshine-quiz
+    build: ./
     ports:
       - "20090:80"
     restart: unless-stopped
