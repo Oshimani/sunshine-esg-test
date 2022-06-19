@@ -71,10 +71,10 @@ const Home: NextPage = () => {
                                 gap: 8,
                                 flexDirection: "column"
                             }}>
-                                <Link href={"https://startpage.com"}>
-                                    <Image src="/qr_code_factsheet.png" alt="link to factsheet" height={160} width={160} layout="fixed" />
+                                <Link href={"/docs/FACTSHEET.pdf"}>
+                                    <Image src="/QR_FACTSHEET.png" alt="link to factsheet" height={160} width={160} layout="fixed" />
                                 </Link>
-                                <Link href={"https://startpage.com"}>
+                                <Link href={"/docs/FACTSHEET.pdf"}>
                                     <Button variant='gradient'
                                         style={{ borderRadius: 6, backgroundColor: theme.white }}
                                         px={12} py={6}>
@@ -91,10 +91,10 @@ const Home: NextPage = () => {
                                 gap: 8,
                                 flexDirection: "column"
                             }}>
-                                <Link href={"https://startpage.com"}>
-                                    <Image src="/qr_code_kiid.png" alt="link to factsheet" height={160} width={160} layout="fixed" />
+                                <Link href={"/docs/KIID_RETAIL.pdf"}>
+                                    <Image src="/QR_KIID_RETAIL.png" alt="link to factsheet" height={160} width={160} layout="fixed" />
                                 </Link>
-                                <Link href={"https://startpage.com"}>
+                                <Link href={"/docs/KIID_RETAIL.pdf"}>
                                     <Button variant='gradient'
                                         style={{ borderRadius: 6, backgroundColor: theme.white }}
                                         px={12} py={6}>
